@@ -1,0 +1,14 @@
+@import './../fonts/Gilroy/stylesheet.css';
+
+// base
+@import './base/reset';
+@import './base/vars';
+@import './base/base';
+
+// blocks
+@import './blocks/header';
+@import './blocks/nav';
+@import './blocks/nav-list';
+@import './blocks/cart';
+@import './blocks/search-form';
+@import './blocks/info-dot';

@@ -1,0 +1,105 @@
+.header {
+	position: relative;
+	padding-top: 40px;
+
+	background-color: black;
+	background-image: url('./../image/header/header-bg.jpg');
+	background-size: cover;
+	aspect-ratio: 1440/1084;
+
+	color: var(--header-text-color);
+
+	@include retina-bg(url('./../image/header/header-bg@2x.jpg'));
+
+	a {
+		color: var(--header-text-color);
+	}
+}
+
+.header__nav {
+	margin-bottom: 86px;
+}
+
+@keyframes cursor {
+	0%,
+	100% {
+		border-color: transparent;
+	}
+	50% {
+		border-color: #f9f4f4;
+	}
+}
+
+@keyframes typing {
+	0% {
+		width: 0ch;
+	} /*Text is hidden*/
+	30% {
+		width: 35ch;
+	} /*The enitre header will be typed out 1 character at a time*/
+	80% {
+		width: 35ch;
+	} /*Text stays visible*/
+	90% {
+		width: 0ch;
+	} /*Text is deleted*/
+	100% {
+		width: 0ch;
+	} /*Text stays hidden*/
+}
+
+.header__content {
+	text-align: center;
+
+	p {
+		display: inline-block;
+		font-weight: 500;
+		border-right: 4px solid #e9f5e9; /*This will be the blinking cursor*/
+		animation: cursor 1s infinite step-end, typing 15s infinite steps(35);
+		white-space: nowrap;
+		overflow: hidden;
+
+		font-size: 24px;
+		line-height: 38.4px;
+		opacity: 0.8;
+	}
+}
+
+.header__title {
+	margin-bottom: 14px;
+	font-weight: 700;
+	font-size: 80px;
+	line-height: 104px;
+	letter-spacing: -0.8px;
+	animation: cursor 1s infinite step-end;
+}
+
+.header__search {
+	margin: 0 auto;
+	margin-top: 45px;
+}
+
+// Dots
+.header__dot-sofa {
+	position: absolute;
+	left: calc(296 * 100% / (1440 - 30));
+	top: calc(685 * 100% / (1084 - 9));
+}
+
+.header__dot-vase {
+	position: absolute;
+	left: calc(114 * 100% / 1440);
+	top: calc(754 * 100% / 1084);
+}
+
+.header__dot-figure {
+	position: absolute;
+	left: calc(810 * 100% / 1440);
+	top: calc(787 * 100% / 1084);
+}
+
+.header__dot-plant {
+	position: absolute;
+	right: calc(46 * 100% / 1440);
+	top: calc(821 * 100% / 1084);
+}

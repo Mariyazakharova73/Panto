@@ -1,0 +1,347 @@
+@import './../fonts/Gilroy/stylesheet.css';
+/* Reset and base styles  */
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Inter:wght@400;600&display=swap");
+* {
+  padding: 0px;
+  margin: 0px;
+  border: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Links */
+a, a:link, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* Common */
+aside, nav, footer, header, section, main {
+  display: block;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+ul, ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+img, svg {
+  max-width: 100%;
+  height: auto;
+}
+
+address {
+  font-style: normal;
+}
+
+/* Form */
+input, textarea, button, select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button, input[type=submit] {
+  display: inline-block;
+  box-shadow: none;
+  background-color: transparent;
+  background: none;
+  cursor: pointer;
+}
+
+input:focus, input:active,
+button:focus, button:active {
+  outline: none;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+label {
+  cursor: pointer;
+}
+
+legend {
+  display: block;
+}
+
+:root {
+  --text-color: #1e1e1e;
+  --text-muted: #8d8d8d;
+  --text-card-blue: #0d1b39;
+  --accent: #e58411;
+  --footer-accent: #f6973f;
+  --footer-bg: #2d2f33;
+  --footer-text-color: #ffffff;
+  --header-text-color: #ffffff;
+  --ui-orange: #e58411;
+  --ui-turquoise: #00d6c9;
+  --ui-gray: #7c7c7c;
+  --ui-dark-blue: #0d1b39;
+  --font-main: "Gilroy", sans-serif;
+  --font-cards: "Inter", sans-serif;
+  --font-footer-accent: "DM Sans", sans-serif;
+}
+
+body {
+  font-family: var(--font-main);
+  color: var(--text-color);
+}
+
+.container {
+  max-width: 1310px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.header {
+  position: relative;
+  padding-top: 40px;
+  background-color: black;
+  background-image: url("./../image/header/header-bg.jpg");
+  background-size: cover;
+  aspect-ratio: 1440/1084;
+  color: var(--header-text-color);
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .header {
+    background-image: url("./../image/header/header-bg@2x.jpg");
+  }
+}
+.header a {
+  color: var(--header-text-color);
+}
+
+.header__nav {
+  margin-bottom: 86px;
+}
+
+@keyframes cursor {
+  0%, 100% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #f9f4f4;
+  }
+}
+@keyframes typing {
+  0% {
+    width: 0ch;
+  } /*Text is hidden*/
+  30% {
+    width: 35ch;
+  } /*The enitre header will be typed out 1 character at a time*/
+  80% {
+    width: 35ch;
+  } /*Text stays visible*/
+  90% {
+    width: 0ch;
+  } /*Text is deleted*/
+  100% {
+    width: 0ch;
+  } /*Text stays hidden*/
+}
+.header__content {
+  text-align: center;
+}
+.header__content p {
+  display: inline-block;
+  font-weight: 500;
+  border-right: 4px solid #e9f5e9; /*This will be the blinking cursor*/
+  animation: cursor 1s infinite step-end, typing 15s infinite steps(35);
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 24px;
+  line-height: 38.4px;
+  opacity: 0.8;
+}
+
+.header__title {
+  margin-bottom: 14px;
+  font-weight: 700;
+  font-size: 80px;
+  line-height: 104px;
+  letter-spacing: -0.8px;
+  animation: cursor 1s infinite step-end;
+}
+
+.header__search {
+  margin: 0 auto;
+  margin-top: 45px;
+}
+
+.header__dot-sofa {
+  position: absolute;
+  left: 20.9929078014%;
+  top: 63.7209302326%;
+}
+
+.header__dot-vase {
+  position: absolute;
+  left: 7.9166666667%;
+  top: 69.557195572%;
+}
+
+.header__dot-figure {
+  position: absolute;
+  left: 56.25%;
+  top: 72.6014760148%;
+}
+
+.header__dot-plant {
+  position: absolute;
+  right: 3.1944444444%;
+  top: 75.7380073801%;
+}
+
+.nav {
+  display: grid;
+  grid-template-columns: 2fr 8fr 2fr;
+  gap: 20px;
+}
+
+.nav__logo {
+  align-self: center;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 32.81px;
+  letter-spacing: 0.28px;
+  text-transform: capitalize;
+}
+
+.nav-list {
+  justify-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 65px;
+}
+
+.nav-list__item {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21.09px;
+}
+
+.cart {
+  align-self: center;
+  justify-self: end;
+  position: relative;
+}
+
+.cart__count {
+  position: absolute;
+  top: 3px;
+  right: -6px;
+  display: inline-block;
+  height: 25px;
+  padding: 0 6px;
+  background-color: var(--accent);
+  border-radius: 40px;
+  line-height: 25px;
+  font-weight: 700;
+  font-family: var(--font-cards);
+}
+
+.search-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 344px;
+  padding: 8px 8px 8px 20px;
+  border-radius: 42px;
+  border: 0.86px solid rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.1490196078);
+  height: 56px;
+}
+
+.search-form__input {
+  color: var(--header-text-color);
+  font-size: 18px;
+  line-height: 27px;
+  font-weight: 500;
+}
+.search-form__input::-moz-placeholder {
+  color: var(--header-text-color);
+  font-weight: 400;
+}
+.search-form__input::placeholder {
+  color: var(--header-text-color);
+  font-weight: 400;
+}
+
+.search-form__btn {
+  width: 40px;
+  height: 40px;
+  padding: 11px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.info-dot {
+  position: relative;
+  cursor: pointer;
+}
+
+.info-dot__circle {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #fff;
+  transition: all 0.2s ease-in;
+}
+
+.info-dot__radius {
+  width: 32px;
+  height: 32px;
+  border: 0.86px solid #fff;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  animation: pulse 1s infinite alternate;
+}
+
+.info-dot:hover .info-dot__radius {
+  animation: pulse 1s infinite alternate paused;
+}
+
+.info-dot:hover .info-dot__circle {
+  background-color: var(--accent);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}/*# sourceMappingURL=main.css.map */
