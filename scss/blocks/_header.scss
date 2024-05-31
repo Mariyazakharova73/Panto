@@ -82,24 +82,27 @@
 // Dots
 .header__dot-sofa {
 	position: absolute;
-	left: calc(296 * 100% / (1440 - 30));
-	top: calc(685 * 100% / (1084 - 9));
+	left: calc(296 * 100% / 1440);
+	top: calc(685 * 100% / 1084);
 }
 
 .header__dot-vase {
 	position: absolute;
-	left: calc(114 * 100% / 1440);
-	top: calc(754 * 100% / 1084);
+	left: calc(110 * 100% / 1440);
+	top: calc(650 * 100% / 1084);
+	transform: translate(-50%, -50%);
 }
 
-.header__dot-figure {
+.header__dot-pillow {
 	position: absolute;
-	left: calc(810 * 100% / 1440);
-	top: calc(787 * 100% / 1084);
+	left: calc(855 * 100% / 1440);
+	top: calc(660 * 100% / 1084);
+	transform: translate(-50%, -50%);
 }
 
 .header__dot-plant {
 	position: absolute;
 	right: calc(46 * 100% / 1440);
-	top: calc(821 * 100% / 1084);
+	top: calc(750 * 100% / 1084);
+	transform: translate(50%, 50%);
 }
