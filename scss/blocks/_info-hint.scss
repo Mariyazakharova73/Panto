@@ -1,12 +1,11 @@
 .info-hint {
 	display: flex;
-	padding-top: 12px;
 	justify-content: center;
 	gap: 8px;
-	background-image: url('./../image/icons/tooltip.svg');
+	padding-top: 12px;
 	width: 112px;
 	height: 56px;
-
+	background-image: url('./../image/icons/tooltip.svg');
 	position: absolute;
 	top: -26px;
 	left: 50%;

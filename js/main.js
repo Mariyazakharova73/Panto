@@ -22,3 +22,15 @@ document.addEventListener('click', closeHint);
 for (let hint of infoHints) {
 	hint.addEventListener('click', e => e.stopPropagation());
 }
+
+const swiper = new Swiper('.swiper', {
+	// Optional parameters
+	// direction: 'horizontal',
+	// loop: true,
+
+	// Navigation arrows
+	navigation: {
+		nextEl: '#sliderNext',
+		prevEl: '#sliderPrev',
+	},
+});

@@ -5,6 +5,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Panto</title>
 		<link rel="stylesheet" href="./scss/main.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+		/>
 	</head>
 	<body>
 		<header class="header">
@@ -211,12 +215,173 @@
 		<section class="products">
 			<div class="container">
 				<h2 class="products__title">Самые популярные продукты</h2>
-				<div class="products__tabs">TABS</div>
-				<div class="products__slider">SLIDER</div>
-				<div class="read-more">LINK</div>
+				<div class="products__tabs">
+					<div class="tab-controls">
+						<button class="tab-controls__bth tab-controls__bth--active">
+							Стулья
+						</button>
+						<button class="tab-controls__bth">Кровати</button>
+						<button class="tab-controls__bth">Диваны</button>
+						<button class="tab-controls__bth">Лампы</button>
+					</div>
+				</div>
+				<div class="products__slider">
+					<div class="slider">
+						<!-- Slider main container -->
+						<div class="swiper">
+							<!-- Additional required wrapper -->
+							<div class="swiper-wrapper">
+								<!-- Slides -->
+								<article class="card swiper-slide">
+									<a class="card__link" href="#product-page"></a>
+									<div class="card__photo">
+										<img
+											class="card__image"
+											src="./image/products/chair-01.png"
+											srcset="./image/products/chair-01@2x.png 2x"
+											alt="Стул."
+										/>
+									</div>
+									<div class="card__desc">
+										<a href="#category" class="card__category">Стулья</a>
+										<h3 class="card__title">Кресло</h3>
+
+										<div class="card__rating">
+											<img src="./image/icons/star.svg" alt="Рейтинг." />
+											<img src="./image/icons/star.svg" alt="Рейтинг." />
+											<img src="./image/icons/star.svg" alt="Рейтинг." />
+											<img src="./image/icons/star.svg" alt="Рейтинг." />
+											<img src="./image/icons/star-light.svg" alt="Рейтинг." />
+										</div>
+										<div class="card__footer">
+											<p class="card__price" data-value="₽">5000</p>
+											<button class="card__btn">
+												<img
+													src="./image/icons/plus.svg"
+													alt="Добавить в корзину."
+												/>
+											</button>
+										</div>
+									</div>
+								</article>
+								<article class="card swiper-slide">
+									<a class="card__link" href="#product-page"></a>
+									<div class="card__photo">
+										<img
+											class="card__image"
+											src="./image/products/chair-02.png"
+											srcset="./image/products/chair-02@2x.png 2x"
+											alt="Стул."
+										/>
+									</div>
+									<div class="card__desc">
+										<a href="#category" class="card__category">Стулья</a>
+										<h3 class="card__title">Стул</h3>
+
+										<div class="card__rating">
+											<img src="./image/icons/star.svg" alt="Рейтинг." />
+											<img src="./image/icons/star.svg" alt="Рейтинг." />
+											<img src="./image/icons/star.svg" alt="Рейтинг." />
+											<img src="./image/icons/star.svg" alt="Рейтинг." />
+											<img src="./image/icons/star-light.svg" alt="Рейтинг." />
+										</div>
+										<div class="card__footer">
+											<p class="card__price" data-value="₽">3000</p>
+											<button class="card__btn">
+												<img
+													src="./image/icons/plus.svg"
+													alt="Добавить в корзину."
+												/>
+											</button>
+										</div>
+									</div>
+								</article>
+								<article class="card swiper-slide">
+									<a class="card__link" href="#product-page"></a>
+									<div class="card__photo">
+										<img
+											class="card__image"
+											src="./image/products/chair-03.png"
+											srcset="./image/products/chair-03@2x.png 2x"
+											alt="Стул."
+										/>
+									</div>
+									<div class="card__desc">
+										<a href="#category" class="card__category">Стулья</a>
+										<h3 class="card__title">Стул</h3>
+
+										<div class="card__rating">
+											<img src="./image/icons/star.svg" alt="Рейтинг." />
+											<img src="./image/icons/star.svg" alt="Рейтинг." />
+											<img src="./image/icons/star.svg" alt="Рейтинг." />
+											<img src="./image/icons/star.svg" alt="Рейтинг." />
+											<img src="./image/icons/star-light.svg" alt="Рейтинг." />
+										</div>
+										<div class="card__footer">
+											<p class="card__price" data-value="₽">3200</p>
+											<button class="card__btn">
+												<img
+													src="./image/icons/plus.svg"
+													alt="Добавить в корзину."
+												/>
+											</button>
+										</div>
+									</div>
+								</article>
+								<article class="card swiper-slide">
+									<a class="card__link" href="#product-page"></a>
+									<div class="card__photo">
+										<img
+											class="card__image"
+											src="./image/products/chair-04.png"
+											srcset="./image/products/chair-04@2x.png 2x"
+											alt="Стул."
+										/>
+									</div>
+									<div class="card__desc">
+										<a href="#category" class="card__category">Стулья</a>
+										<h3 class="card__title">Стул</h3>
+
+										<div class="card__rating">
+											<img src="./image/icons/star.svg" alt="Рейтинг." />
+											<img src="./image/icons/star.svg" alt="Рейтинг." />
+											<img src="./image/icons/star.svg" alt="Рейтинг." />
+											<img src="./image/icons/star.svg" alt="Рейтинг." />
+											<img src="./image/icons/star-light.svg" alt="Рейтинг." />
+										</div>
+										<div class="card__footer">
+											<p class="card__price" data-value="₽">2500</p>
+											<button class="card__btn">
+												<img
+													src="./image/icons/plus.svg"
+													alt="Добавить в корзину."
+												/>
+											</button>
+										</div>
+									</div>
+								</article>
+							</div>
+						</div>
+
+						<button id="sliderPrev" class="slider__btn slider__btn--prev">
+							<img
+								src="./image/slider/slider-left.svg"
+								alt="Предыдущий товар."
+							/>
+						</button>
+						<button id="sliderNext" class="slider__btn slider__btn--next">
+							<img
+								src="./image/slider/slider-right.svg"
+								alt="Следующий товар."
+							/>
+						</button>
+					</div>
+				</div>
+
+				<div class="read-more read-more--large">LINK</div>
 			</div>
 		</section>
-
+		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 		<script src="./js/main.js"></script>
 	</body>
 </html>
