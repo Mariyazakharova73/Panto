@@ -5,10 +5,6 @@ body {
 	color: var(--text-color);
 }
 
-body {
-	padding-bottom: 50vh;
-}
-
 .container {
 	max-width: 1310px;
 	padding: 0 15px;
@@ -21,4 +17,16 @@ body {
 
 .none {
 	display: none !important;
+}
+
+a {
+	transition: opacity 0.2s ease-in;
+	&:hover {
+		opacity: 0.6;
+	}
+}
+
+.title-2 {
+	font-size: clamp(32px, 1.702rem + 1.49vw, 42px);
+	font-weight: 700;
 }

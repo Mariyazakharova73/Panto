@@ -18,6 +18,7 @@
 
 .header__nav {
 	margin-bottom: 86px;
+	margin-bottom: clamp(20px, 0.071rem + 5.89vw, 86px);
 }
 
 @keyframes cursor {
@@ -60,8 +61,16 @@
 		overflow: hidden;
 
 		font-size: 24px;
-		line-height: 38.4px;
+		font-size: clamp(16px, 0.857rem + 0.71vw, 24px);
+		line-height: 160%;
 		opacity: 0.8;
+
+		@media (max-width: 500px) {
+			border-right: none;
+			animation: none;
+			white-space: wrap;
+			text-wrap: balance;
+		}
 	}
 }
 
@@ -69,39 +78,49 @@
 	margin-bottom: 14px;
 	font-weight: 700;
 	font-size: 80px;
-	line-height: 104px;
-	letter-spacing: -0.8px;
-	animation: cursor 1s infinite step-end;
+	font-size: clamp(28px, 0.821rem + 4.64vw, 80px);
+	line-height: 130%;
+	text-wrap: balance;
+	// animation: cursor 1s infinite step-end;
 }
 
 .header__search {
 	margin: 0 auto;
+	display: flex;
+	justify-content: center;
 	margin-top: 45px;
+	@include media-mobile-xl() {
+		display: none;
+	}
 }
 
 // Dots
-.header__dot-sofa {
+
+.header__dot {
 	position: absolute;
+	@include media-tablet() {
+		display: none;
+	}
+}
+
+.header__dot--sofa {
 	left: calc(296 * 100% / 1440);
 	top: calc(685 * 100% / 1084);
 }
 
-.header__dot-vase {
-	position: absolute;
+.header__dot--vase {
 	left: calc(110 * 100% / 1440);
 	top: calc(650 * 100% / 1084);
 	transform: translate(-50%, -50%);
 }
 
-.header__dot-pillow {
-	position: absolute;
+.header__dot--pillow {
 	left: calc(855 * 100% / 1440);
 	top: calc(660 * 100% / 1084);
 	transform: translate(-50%, -50%);
 }
 
 .header__dot-plant {
-	position: absolute;
 	right: calc(46 * 100% / 1440);
 	top: calc(750 * 100% / 1084);
 	transform: translate(50%, 50%);

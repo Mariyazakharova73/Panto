@@ -1,5 +1,6 @@
 .search-form {
 	display: flex;
+	gap: 10px;
 	justify-content: space-between;
 	align-items: center;
 	max-width: 344px;
@@ -11,6 +12,7 @@
 }
 
 .search-form__input {
+	flex-grow: 1;
 	color: var(--header-text-color);
 	font-size: 18px;
 	line-height: 27px;
@@ -28,4 +30,5 @@
 	padding: 11px;
 	border-radius: 50%;
 	background: var(--accent);
+	flex-shrink: 0;
 }

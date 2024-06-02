@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Panto</title>
+		<title>Furniture</title>
 		<link rel="stylesheet" href="./scss/main.css" />
 		<link
 			rel="stylesheet"
@@ -11,7 +11,7 @@
 		/>
 	</head>
 	<body>
-		<header class="header">
+		<header class="header none">
 			<div class="container">
 				<nav class="header__nav nav">
 					<div class="nav__logo">
@@ -19,7 +19,22 @@
 					</div>
 					<ul class="nav-list">
 						<li class="nav-list__item">
-							<a class="nav-list__link" href="#!">Мебель</a>
+							<a class="nav-list__link nav-list__link--dropdown" href="#!"
+								>Мебель</a
+							>
+							<div class="nav-list__sub-nav">
+								<ul class="sub__nav">
+									<li class="sub-nav__item">
+										<a href="" class="sub-nav__link">Сервисы</a>
+									</li>
+									<li class="sub-nav__item">
+										<a href="" class="sub-nav__link">Продукты</a>
+									</li>
+									<li class="sub-nav__item">
+										<a href="" class="sub-nav__link">Контакты</a>
+									</li>
+								</ul>
+							</div>
 						</li>
 						<li class="nav-list__item">
 							<a class="nav-list__link" href="#!">Магазин</a>
@@ -31,6 +46,7 @@
 							<a class="nav-list__link" href="#!">Контакты</a>
 						</li>
 					</ul>
+
 					<div class="cart">
 						<a href="#!">
 							<img
@@ -41,26 +57,33 @@
 							<div class="cart__count">0</div>
 						</a>
 					</div>
+
+					<!-- mobile button menu-->
+					<button id="open-mobile-nav-btn" class="nav__btn">
+						<img src="./image/icons/menu.svg" alt="Меню." />
+					</button>
 				</nav>
 
 				<div class="header__content">
 					<h1 class="header__title">
-						Сделайте свой интерьер более минималистичным и современным
+						Сделайте интерьер более минималистичным и современным
 					</h1>
 					<p>Преобразите свою комнату легко и быстро.</p>
 
-					<form action="" class="search-form header__search">
-						<input
-							class="search-form__input"
-							placeholder="Поиск мебели..."
-							autocomplete="off"
-						/><button class="search-form__btn">
-							<img src="./image/icons/search.svg" alt="Поиск." />
-						</button>
-					</form>
+					<div class="header__search">
+						<form class="search-form">
+							<input
+								class="search-form__input"
+								placeholder="Поиск мебели..."
+								autocomplete="off"
+							/><button class="search-form__btn">
+								<img src="./image/icons/search.svg" alt="Поиск." />
+							</button>
+						</form>
+					</div>
 				</div>
 
-				<div class="header__dot-sofa">
+				<div class="header__dot header__dot--sofa">
 					<button class="info-dot">
 						<div class="info-dot__circle"></div>
 						<div class="info-dot__radius"></div>
@@ -90,7 +113,7 @@
 					</div>
 				</div>
 
-				<div class="header__dot-vase">
+				<div class="header__dot header__dot--vase">
 					<button class="info-dot">
 						<div class="info-dot__circle"></div>
 						<div class="info-dot__radius"></div>
@@ -119,7 +142,7 @@
 					</div>
 				</div>
 
-				<div class="header__dot-pillow">
+				<div class="header__dot header__dot--pillow">
 					<button class="info-dot">
 						<div class="info-dot__circle"></div>
 						<div class="info-dot__radius"></div>
@@ -148,7 +171,7 @@
 					</div>
 				</div>
 
-				<div class="header__dot-plant">
+				<div class="header__dot header__dot--plant">
 					<button class="info-dot">
 						<div class="info-dot__circle"></div>
 						<div class="info-dot__radius"></div>
@@ -179,10 +202,12 @@
 			</div>
 		</header>
 
-		<section class="benefits">
+		<section class="benefits none">
 			<div class="container">
 				<div class="benefits__grid">
-					<h2 class="benefits__title">Наши преимущества</h2>
+					<div class="benefits__title">
+						<h2 class="title-2">Наши преимущества</h2>
+					</div>
 
 					<div class="benefit">
 						<h3 class="benefit__title">Роскошные удобства</h3>
@@ -216,15 +241,21 @@
 
 		<section class="products">
 			<div class="container">
-				<h2 class="products__title">Самые популярные продукты</h2>
+				<div class="products__title">
+					<h2 class="title-2">Самые популярные продукты</h2>
+				</div>
 				<div class="products__tabs">
 					<div class="tab-controls">
-						<button class="tab-controls__bth tab-controls__bth--active">
-							Стулья
+						<button
+							data-tab="all"
+							class="tab-controls__bth tab-controls__bth--active"
+						>
+							Все
 						</button>
-						<button class="tab-controls__bth">Кровати</button>
-						<button class="tab-controls__bth">Диваны</button>
-						<button class="tab-controls__bth">Лампы</button>
+						<button data-tab="chair" class="tab-controls__bth">Стулья</button>
+						<button data-tab="bed" class="tab-controls__bth">Кровати</button>
+						<button data-tab="sofa" class="tab-controls__bth">Диваны</button>
+						<button data-tab="lamp" class="tab-controls__bth">Лампы</button>
 					</div>
 				</div>
 				<div class="products__slider">
@@ -234,7 +265,7 @@
 							<!-- Additional required wrapper -->
 							<div class="swiper-wrapper">
 								<!-- Slides -->
-								<article class="card swiper-slide">
+								<article data-tab-value="chair" class="card swiper-slide">
 									<a class="card__link" href="#product-page"></a>
 									<div class="card__photo">
 										<img
@@ -266,7 +297,7 @@
 										</div>
 									</div>
 								</article>
-								<article class="card swiper-slide">
+								<article data-tab-value="chair" class="card swiper-slide">
 									<a class="card__link" href="#product-page"></a>
 									<div class="card__photo">
 										<img
@@ -298,7 +329,7 @@
 										</div>
 									</div>
 								</article>
-								<article class="card swiper-slide">
+								<article data-tab-value="chair" class="card swiper-slide">
 									<a class="card__link" href="#product-page"></a>
 									<div class="card__photo">
 										<img
@@ -330,7 +361,7 @@
 										</div>
 									</div>
 								</article>
-								<article class="card swiper-slide">
+								<article data-tab-value="chair" class="card swiper-slide">
 									<a class="card__link" href="#product-page"></a>
 									<div class="card__photo">
 										<img
@@ -362,7 +393,7 @@
 										</div>
 									</div>
 								</article>
-								<article class="card swiper-slide">
+								<article data-tab-value="chair" class="card swiper-slide">
 									<a class="card__link" href="#product-page"></a>
 									<div class="card__photo">
 										<img
@@ -394,7 +425,7 @@
 										</div>
 									</div>
 								</article>
-								<article class="card swiper-slide">
+								<article data-tab-value="chair" class="card swiper-slide">
 									<a class="card__link" href="#product-page"></a>
 									<div class="card__photo">
 										<img
@@ -426,7 +457,7 @@
 										</div>
 									</div>
 								</article>
-								<article class="card swiper-slide">
+								<article data-tab-value="chair" class="card swiper-slide">
 									<a class="card__link" href="#product-page"></a>
 									<div class="card__photo">
 										<img
@@ -458,7 +489,7 @@
 										</div>
 									</div>
 								</article>
-								<article class="card swiper-slide">
+								<article data-tab-value="chair" class="card swiper-slide">
 									<a class="card__link" href="#product-page"></a>
 									<div class="card__photo">
 										<img
@@ -470,6 +501,263 @@
 									</div>
 									<div class="card__desc">
 										<a href="#category" class="card__category">Стулья</a>
+										<h3 class="card__title">Стул</h3>
+
+										<div class="card__rating">
+											<img src="./image/icons/star.svg" alt="Рейтинг." />
+											<img src="./image/icons/star.svg" alt="Рейтинг." />
+											<img src="./image/icons/star.svg" alt="Рейтинг." />
+											<img src="./image/icons/star.svg" alt="Рейтинг." />
+											<img src="./image/icons/star-light.svg" alt="Рейтинг." />
+										</div>
+										<div class="card__footer">
+											<p class="card__price" data-value="₽">2500</p>
+											<button class="card__btn">
+												<img
+													src="./image/icons/plus.svg"
+													alt="Добавить в корзину."
+												/>
+											</button>
+										</div>
+									</div>
+								</article>
+								<!-- Other category -->
+								<article data-tab-value="bed" class="card swiper-slide">
+									<a class="card__link" href="#product-page"></a>
+									<div class="card__photo">
+										<img
+											class="card__image"
+											src="./image/products/chair-01.png"
+											srcset="./image/products/chair-01@2x.png 2x"
+											alt="Стул."
+										/>
+									</div>
+									<div class="card__desc">
+										<a href="#category" class="card__category">Кровати</a>
+										<h3 class="card__title">Кресло</h3>
+
+										<div class="card__rating">
+											<img src="./image/icons/star.svg" alt="Рейтинг." />
+											<img src="./image/icons/star.svg" alt="Рейтинг." />
+											<img src="./image/icons/star.svg" alt="Рейтинг." />
+											<img src="./image/icons/star.svg" alt="Рейтинг." />
+											<img src="./image/icons/star-light.svg" alt="Рейтинг." />
+										</div>
+										<div class="card__footer">
+											<p class="card__price" data-value="₽">5000</p>
+											<button class="card__btn">
+												<img
+													src="./image/icons/plus.svg"
+													alt="Добавить в корзину."
+												/>
+											</button>
+										</div>
+									</div>
+								</article>
+								<article data-tab-value="sofa" class="card swiper-slide">
+									<a class="card__link" href="#product-page"></a>
+									<div class="card__photo">
+										<img
+											class="card__image"
+											src="./image/products/chair-02.png"
+											srcset="./image/products/chair-02@2x.png 2x"
+											alt="Стул."
+										/>
+									</div>
+									<div class="card__desc">
+										<a href="#category" class="card__category">Диваны</a>
+										<h3 class="card__title">Стул</h3>
+
+										<div class="card__rating">
+											<img src="./image/icons/star.svg" alt="Рейтинг." />
+											<img src="./image/icons/star.svg" alt="Рейтинг." />
+											<img src="./image/icons/star.svg" alt="Рейтинг." />
+											<img src="./image/icons/star.svg" alt="Рейтинг." />
+											<img src="./image/icons/star-light.svg" alt="Рейтинг." />
+										</div>
+										<div class="card__footer">
+											<p class="card__price" data-value="₽">3000</p>
+											<button class="card__btn">
+												<img
+													src="./image/icons/plus.svg"
+													alt="Добавить в корзину."
+												/>
+											</button>
+										</div>
+									</div>
+								</article>
+								<article data-tab-value="lamp" class="card swiper-slide">
+									<a class="card__link" href="#product-page"></a>
+									<div class="card__photo">
+										<img
+											class="card__image"
+											src="./image/products/chair-03.png"
+											srcset="./image/products/chair-03@2x.png 2x"
+											alt="Стул."
+										/>
+									</div>
+									<div class="card__desc">
+										<a href="#category" class="card__category">Лампы</a>
+										<h3 class="card__title">Стул</h3>
+
+										<div class="card__rating">
+											<img src="./image/icons/star.svg" alt="Рейтинг." />
+											<img src="./image/icons/star.svg" alt="Рейтинг." />
+											<img src="./image/icons/star.svg" alt="Рейтинг." />
+											<img src="./image/icons/star.svg" alt="Рейтинг." />
+											<img src="./image/icons/star-light.svg" alt="Рейтинг." />
+										</div>
+										<div class="card__footer">
+											<p class="card__price" data-value="₽">3200</p>
+											<button class="card__btn">
+												<img
+													src="./image/icons/plus.svg"
+													alt="Добавить в корзину."
+												/>
+											</button>
+										</div>
+									</div>
+								</article>
+								<article data-tab-value="bed" class="card swiper-slide">
+									<a class="card__link" href="#product-page"></a>
+									<div class="card__photo">
+										<img
+											class="card__image"
+											src="./image/products/chair-04.png"
+											srcset="./image/products/chair-04@2x.png 2x"
+											alt="Стул."
+										/>
+									</div>
+									<div class="card__desc">
+										<a href="#category" class="card__category">Кровати</a>
+										<h3 class="card__title">Стул</h3>
+
+										<div class="card__rating">
+											<img src="./image/icons/star.svg" alt="Рейтинг." />
+											<img src="./image/icons/star.svg" alt="Рейтинг." />
+											<img src="./image/icons/star.svg" alt="Рейтинг." />
+											<img src="./image/icons/star.svg" alt="Рейтинг." />
+											<img src="./image/icons/star-light.svg" alt="Рейтинг." />
+										</div>
+										<div class="card__footer">
+											<p class="card__price" data-value="₽">2500</p>
+											<button class="card__btn">
+												<img
+													src="./image/icons/plus.svg"
+													alt="Добавить в корзину."
+												/>
+											</button>
+										</div>
+									</div>
+								</article>
+								<article data-tab-value="sofa" class="card swiper-slide">
+									<a class="card__link" href="#product-page"></a>
+									<div class="card__photo">
+										<img
+											class="card__image"
+											src="./image/products/chair-01.png"
+											srcset="./image/products/chair-01@2x.png 2x"
+											alt="Стул."
+										/>
+									</div>
+									<div class="card__desc">
+										<a href="#category" class="card__category">Диваны</a>
+										<h3 class="card__title">Кресло</h3>
+
+										<div class="card__rating">
+											<img src="./image/icons/star.svg" alt="Рейтинг." />
+											<img src="./image/icons/star.svg" alt="Рейтинг." />
+											<img src="./image/icons/star.svg" alt="Рейтинг." />
+											<img src="./image/icons/star.svg" alt="Рейтинг." />
+											<img src="./image/icons/star-light.svg" alt="Рейтинг." />
+										</div>
+										<div class="card__footer">
+											<p class="card__price" data-value="₽">5000</p>
+											<button class="card__btn">
+												<img
+													src="./image/icons/plus.svg"
+													alt="Добавить в корзину."
+												/>
+											</button>
+										</div>
+									</div>
+								</article>
+								<article data-tab-value="bed" class="card swiper-slide">
+									<a class="card__link" href="#product-page"></a>
+									<div class="card__photo">
+										<img
+											class="card__image"
+											src="./image/products/chair-02.png"
+											srcset="./image/products/chair-02@2x.png 2x"
+											alt="Стул."
+										/>
+									</div>
+									<div class="card__desc">
+										<a href="#category" class="card__category">Кровати</a>
+										<h3 class="card__title">Стул</h3>
+
+										<div class="card__rating">
+											<img src="./image/icons/star.svg" alt="Рейтинг." />
+											<img src="./image/icons/star.svg" alt="Рейтинг." />
+											<img src="./image/icons/star.svg" alt="Рейтинг." />
+											<img src="./image/icons/star.svg" alt="Рейтинг." />
+											<img src="./image/icons/star-light.svg" alt="Рейтинг." />
+										</div>
+										<div class="card__footer">
+											<p class="card__price" data-value="₽">3000</p>
+											<button class="card__btn">
+												<img
+													src="./image/icons/plus.svg"
+													alt="Добавить в корзину."
+												/>
+											</button>
+										</div>
+									</div>
+								</article>
+								<article data-tab-value="lamp" class="card swiper-slide">
+									<a class="card__link" href="#product-page"></a>
+									<div class="card__photo">
+										<img
+											class="card__image"
+											src="./image/products/chair-03.png"
+											srcset="./image/products/chair-03@2x.png 2x"
+											alt="Стул."
+										/>
+									</div>
+									<div class="card__desc">
+										<a href="#category" class="card__category">Лампы</a>
+										<h3 class="card__title">Стул</h3>
+
+										<div class="card__rating">
+											<img src="./image/icons/star.svg" alt="Рейтинг." />
+											<img src="./image/icons/star.svg" alt="Рейтинг." />
+											<img src="./image/icons/star.svg" alt="Рейтинг." />
+											<img src="./image/icons/star.svg" alt="Рейтинг." />
+											<img src="./image/icons/star-light.svg" alt="Рейтинг." />
+										</div>
+										<div class="card__footer">
+											<p class="card__price" data-value="₽">3200</p>
+											<button class="card__btn">
+												<img
+													src="./image/icons/plus.svg"
+													alt="Добавить в корзину."
+												/>
+											</button>
+										</div>
+									</div>
+								</article>
+								<article data-tab-value="sofa" class="card swiper-slide">
+									<a class="card__link" href="#product-page"></a>
+									<div class="card__photo">
+										<img
+											class="card__image"
+											src="./image/products/chair-04.png"
+											srcset="./image/products/chair-04@2x.png 2x"
+											alt="Стул."
+										/>
+									</div>
+									<div class="card__desc">
+										<a href="#category" class="card__category">Диваны</a>
 										<h3 class="card__title">Стул</h3>
 
 										<div class="card__rating">
@@ -508,10 +796,10 @@
 					</div>
 				</div>
 
-				<div class="read-more read-more--large">LINK</div>
+				<a class="read-more read-more--large" href="#!">Посмотреть все</a>
 			</div>
 		</section>
-		<footer class="footer">
+		<footer class="footer none">
 			<div class="container container--small">
 				<div class="footer__grid">
 					<div class="footer__desc">
@@ -547,7 +835,7 @@
 								<a class="footer__nav-link" href="#!">Стулья</a>
 							</li>
 							<li class="footer__list-item">
-								<a class="footer__nav-link" href="#!">Все</a>
+								<a class="footer__nav-link" href="#!">Все товары</a>
 							</li>
 						</ul>
 					</nav>
@@ -561,7 +849,54 @@
 				</div>
 			</div>
 		</footer>
+		<!-- mobile-nav -->
+		<div id="mobile-nav" class="mobile-nav-wrapper">
+			<div class="mobile-nav-header">
+				<a class="mobile-cart" href="#cart">
+					<div class="cart">
+						<img
+							class="cart__img"
+							src="./image/icons/cart.svg"
+							alt="Корзина."
+						/>
+						<div class="cart__count">0</div>
+					</div>
+					Корзина
+				</a>
+				<button id="close-mobile-nav-btn" class="mobile-nav-btn-close">
+					<img src="./image/icons/close.svg" alt="Закрыть навигацию." />
+				</button>
+			</div>
 
+			<ul class="mobile-nav">
+				<li class="mobile-nav__item">
+					<a class="mobile-nav__link mobile-nav__link--dropdown" href="#!"
+						>Мебель</a
+					>
+					<!-- Выпадающее меню -->
+					<ul class="mobile-sub-nav">
+						<li class="mobile-sub-nav__item">
+							<a href="" class="mobile-sub-nav__link">Сервисы</a>
+						</li>
+						<li class="mobile-sub-nav__item">
+							<a href="" class="mobile-sub-nav__link">Продукты</a>
+						</li>
+						<li class="mobile-sub-nav__item">
+							<a href="" class="mobile-sub-nav__link">Контакты</a>
+						</li>
+					</ul>
+				</li>
+				<li class="mobile-nav__item">
+					<a class="nav-list__link" href="#!">Магазин</a>
+				</li>
+				<li class="mobile-nav__item">
+					<a class="nav-list__link" href="#!">О нас</a>
+				</li>
+				<li class="mobile-nav__item">
+					<a class="nav-list__link" href="#!">Контакты</a>
+				</li>
+			</ul>
+		</div>
 		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 		<script src="./js/main.js"></script>
 	</body>
