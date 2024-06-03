@@ -5,6 +5,11 @@
 	padding: 6px;
 	border-radius: 32px;
 	background-color: #eee;
+
+	@include media-mobile() {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
 }
 
 .tab-controls__bth {
@@ -20,6 +25,11 @@
 	color: rgb(30, 30, 30, 0.8);
 
 	transition: background-color 0.2s ease-in;
+
+	@include media-mobile() {
+		padding: 7px 15px;
+		line-height: 100%;
+	}
 
 	&:hover {
 		background-color: rgba(255, 255, 255, 0.5);

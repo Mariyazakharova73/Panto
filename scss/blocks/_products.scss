@@ -14,7 +14,15 @@
 }
 
 .products__slider {
-	margin-bottom: 60px;
+	margin-bottom: clamp(30px, 0.982rem + 4.46vw, 60px);
+
+	@include media-desktop-small() {
+		padding: 0 40px;
+	}
+
+	@include media-mobile() {
+		padding: 0 20px;
+	}
 }
 
 .products__link {
