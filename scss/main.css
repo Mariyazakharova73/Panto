@@ -162,15 +162,10 @@ a:hover {
   position: relative;
   padding-top: 40px;
   background-color: black;
-  background-image: url("./../image/header/header-bg.jpg");
+  background-image: url("./../image/header/header-bg1.jpg");
   background-size: cover;
   aspect-ratio: 1440/1084;
   color: var(--header-text-color);
-}
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  .header {
-    background-image: url("./../image/header/header-bg@2x.jpg");
-  }
 }
 .header a {
   color: var(--header-text-color);
